@@ -1,0 +1,33 @@
+{
+  "name": "aidpay-api-doc",
+  "version": "0.0.1",
+  "description": "Documentation for AIDPay APIs",
+  "scripts": {
+    "dev": "vuepress dev",
+    "build": "vuepress build",
+    "deploy": "vuepress build && sh scripts/deploy.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AidCoinCo/aidpay-api-doc.git"
+  },
+  "author": {
+    "name": "AIDCoin - CharityStars SA",
+    "email": "hello@aidcoin.co",
+    "url": "https://www.aidcoin.co"
+  },
+  "contributors": [
+    {
+      "name": "Vittorio Minacori",
+      "url": "https://github.com/vittominacori"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AidCoinCo/aidpay-api-doc/issues"
+  },
+  "homepage": "https://www.aidcoin.co",
+  "devDependencies": {
+    "vuepress": "^0.13.0"
+  }
+}
