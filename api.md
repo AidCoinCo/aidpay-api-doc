@@ -6,9 +6,9 @@ sidebarDepth: 3
 
 ## Getting Started
 
-You need Generate Api Key and Secret.
+You need Generate API Key and Secret.
 
-Contact AidCoin to have your Api Key and Secret [here](https://www.aidchain.co/aidpay).
+Contact AidCoin to have your API Key and Secret [here](https://www.aidchain.co/aidpay).
 
 
 ## SDK
