@@ -320,7 +320,7 @@ Params:
 + orderId: a reference for the customer (i.e. his progressive order id). Will be sent for reference in notifications
 + fromCurrency: the currency from which to start the transaction
 + invoicedAmount: the amount to convert (in "fromCurrency")
-+ email: your notification email
++ email: your customer notification email
 + itemId: the item id of the charity to send the funds to
 + refundAddress: an optional address "fromCurrency" compatible where to receive refund in case of problems with the blockchain
 
@@ -338,7 +338,6 @@ curl -X POST \
        "invoicedAmount":0.100000000000000000,
        "email": "example@aidcoin.co",
        "itemId": "1",
-       "itemType": "charity",
        "refundAddress": "1Nv92z71iinNVPncrDm4RPHyo17S9bEVPG"
      }'
 ```
