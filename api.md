@@ -6,14 +6,14 @@ sidebarDepth: 3
 
 ## Getting Started
 
-You need Generate API Key and Secret.
+You need to generate an API Key and Secret.
 
-Contact AidCoin to have your API Key and Secret [here](https://www.aidchain.co/aidpay).
+Contact AidCoin to receive your API Key and Secret [here](https://www.aidchain.co/aidpay).
 
 
 ## SDK
 
-We provided a PHP SDK that can be easily integrated through composer. 
+We have provided a PHP SDK that can be easily integrated through composer. 
 
 ```bash
 composer require aidcoinco/aidpay-php
@@ -24,13 +24,13 @@ You can also use it as example by viewing our code on [GitHub](https://github.co
 
 ## Usage
 
-You can use our SDK or implementing your and calling our APIs at 
+You can use our SDK or implement your own and call our APIs at
 
 ```
 https://www.aidchain.co/api/v1/aidpay/payments
 ```
 
-For each API call you must provide as Header
+For each API call you must provide as a Header
 
 * `Content-Type: application/json`
 * `api-key: <your api key>`
@@ -266,7 +266,7 @@ Description:
 Params:
 + uuid: the unique id of the payment to search for
 
-::: warning NOTE
+::: warning NOTES
 Status could be 
 * WAITING_FOR_DEPOSIT
 * DEPOSIT_RECEIVED
@@ -322,7 +322,7 @@ Params:
 + invoicedAmount: the amount to convert (in "fromCurrency")
 + email: your customer notification email
 + itemId: the item id of the charity to send the funds to
-+ refundAddress: an optional address "fromCurrency" compatible where to receive refund in case of problems with the blockchain
++ refundAddress: an optional address compatible with "fromCurrency" for receiving refunds in the event of problems with the blockchain
 
 Request:
 
@@ -364,6 +364,8 @@ Response:
   "chargedFee": "3.000000000000000000"
 }
 ```
+
+The `invoicedAmount` will need to be sent to the `depositAddress` (by your users or through your system) within 20 minutes. In any case the amount should never exceed the [minimum or maximum limit](#get-payments-from-currency-limits).
 
 
 ### POST /payments/cancel
@@ -413,9 +415,9 @@ Response:
 
 ## Return url
 
-When your payment will be `EXECUTED` you will receive a POST to your return url provided during the setup process.
+When your payment has been `EXECUTED` you will receive a POST to the return url provided during the setup process.
 
-::: warning NOTE
+::: warning NOTES
 Before updating your order status you should sign the call BODY with your API Secret and then check that it matches our provided sign in HEADERS.
 :::
 

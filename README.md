@@ -7,13 +7,13 @@ Visit [website](https://www.aidchain.co/aidpay).
 
 # Embeddable Widget
 
-You can integrate AIDPay into your website in a few minutes and start receiving donations in cryptocurrencies straight away.
+It takes just a few minutes to integrate AIDPay into your website and start receiving donations in cryptocurrencies straight away.
 
-Discover more about [Embeddable Widget](./embeddable-widget.md).
+Find out more about the [Embeddable Widget](./embeddable-widget.md).
 
 
 # APIs
 
 You can integrate AIDPay into your website through APIs.
 
-Discover more about [APIs](./api.md).
+Find out more about [APIs](./api.md).
