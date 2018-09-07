@@ -327,6 +327,7 @@ Params:
 + email: your customer notification email
 + itemId: the item id of the charity to send the funds to
 + refundAddress: an optional address compatible with "fromCurrency" for receiving refunds in the event of problems with the blockchain
++ return: the return URL that will be used to redirect your buyers back to your site (optional: only if you are using the AidPay interface)
 
 Request:
 
@@ -339,10 +340,11 @@ curl -X POST \
   -d '{
        "orderId": "O-12345",
        "fromCurrency": "BTC",
-       "invoicedAmount":0.100000000000000000,
+       "invoicedAmount": "0.100000000000000000",
        "email": "example@aidcoin.co",
        "itemId": "1",
-       "refundAddress": "1Nv92z71iinNVPncrDm4RPHyo17S9bEVPG"
+       "refundAddress": "1Nv92z71iinNVPncrDm4RPHyo17S9bEVPG",
+       "return": "https://your.client/return/url"
      }'
 ```
 
@@ -365,11 +367,14 @@ Response:
   "refundAddress": "1Nv92z71iinNVPncrDm4RPHyo17S9bEVPG",
   "createdAt": "2018-07-26T14:44:28+02:00",
   "expireDate": "2018-07-26T15:04:26+02:00",
-  "chargedFee": "3.000000000000000000"
+  "chargedFee": "3.000000000000000000",
+  "orderLink": "https://www.aidchain.co/aidpay/payment/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee?return=https%3A//your.client/return/url"
 }
 ```
 
-The `invoicedAmount` will need to be sent to the `depositAddress` (by your users or through your system) within 20 minutes.
+The `invoicedAmount` will need to be sent to the `depositAddress` (by your users or through your system) within 20 minutes.   
+
+If you want to use the AidPay interface redirect your users to `orderLink`.
 
 
 ### POST /payments/order
@@ -388,6 +393,7 @@ Params:
 + fiatAmount: the amount to convert (in "fromFiat")
 + email: your customer notification email
 + refundAddress: an optional address compatible with "fromCurrency" for receiving refunds in case of problems with the blockchain
++ return: the return URL that will be used to redirect your buyers back to your site (optional: only if you are using the AidPay interface)
 
 Request:
 
@@ -401,9 +407,10 @@ curl -X POST \
        "orderId": "O-12345",
        "fromCurrency": "BTC",
        "fromFiat": "EUR",
-       "fiatAmount": 1000,
+       "fiatAmount": "1000",
        "email": "example@aidcoin.co",
-       "refundAddress": "1Nv92z71iinNVPncrDm4RPHyo17S9bEVPG"
+       "refundAddress": "1Nv92z71iinNVPncrDm4RPHyo17S9bEVPG",
+       "return": "https://your.client/return/url"
      }'
 ```
 
@@ -426,11 +433,14 @@ Response:
   "refundAddress": "1Nv92z71iinNVPncrDm4RPHyo17S9bEVPG",
   "createdAt": "2018-09-05T10:40:46+02:00",
   "expireDate": "2018-09-05T11:00:44+02:00",
-  "chargedFee": "3.000000000000000000"
+  "chargedFee": "3.000000000000000000",
+  "orderLink": "https://www.aidchain.co/aidpay/payment/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee?return=https%3A//your.client/return/url"
 }
 ```
 
-The `invoicedAmount` will need to be sent to the `depositAddress` (by your users or through your system) within 20 minutes.
+The `invoicedAmount` will need to be sent to the `depositAddress` (by your users or through your system) within 20 minutes.   
+
+If you want to use the AidPay interface redirect your users to `orderLink`.
 
 
 ### POST /payments/cancel
@@ -480,7 +490,7 @@ Response:
 
 ## Return url
 
-When your payment has been `EXECUTED` you will receive a POST to the return url provided during the setup process.
+When your payment has been `EXECUTED` you will receive a POST to the `return_url` provided during the setup process.
 
 ::: warning NOTES
 Before updating your order status you should sign the call BODY with your API Secret and then check that it matches our provided sign in HEADERS.
