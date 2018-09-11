@@ -45,7 +45,8 @@ Description:
 + Returns the list of enabled charities.
 
 Params:
-+ array with limit (default 12) and offset (default 0) 
++ limit (default 12)
++ offset (default 0) 
 
 Request:
 
@@ -307,6 +308,78 @@ Response:
   "createdAt": "2018-07-26T14:44:28+02:00",
   "expireDate": "2018-07-26T15:04:26+02:00",
   "chargedFee": "3.000000000000000000"
+}
+```
+
+
+### GET /payments/orders
+
+Description:
++ Returns the customer's order list.
+
+Params:
++ limit (default 12) 
++ offset (default 0) 
+
+Request:
+
+```bash
+curl -X GET \
+  https://www.aidchain.co/api/v1/aidpay/payments/orders?limit=2&offset=0 \
+  -H 'Content-Type: application/json' \
+  -H 'api-key: <your api key>' \
+  -H 'sign:  <signed message from API call body>'
+```
+
+Response: 
+
+```json
+{
+  "data": [
+    {
+      "uuid": "ffffffff-gggg-hhhh-iiii-llllllllllll",
+      "orderId": "O-67890",
+      "status": "WAITING_FOR_DEPOSIT",
+      "email": "example@aidcoin.co",
+      "depositAddress": "1HfL94JWjmmjroyAHTDhRQqUwZ7PR4JoUZ",
+      "destination": "0x4Aa0f67D9A0666b9Dd0Ee6d397334903AE337e1E",
+      "exchangeRate": "64625.850340136300000000",
+      "fromCurrency": "BTC",
+      "toCurrency": "AID",
+      "invoicedAmount": "0.100000000000000000",
+      "orderedAmount": "6459.585034010000000000",
+      "hash": null,
+      "refundAddress": "1Nv92z71iinNVPncrDm4RPHyo17S9bEVPG",
+      "createdAt": "2018-07-26T14:44:28+02:00",
+      "expireDate": "2018-07-26T15:04:26+02:00",
+      "chargedFee": "3.000000000000000000"
+    },
+    {
+      "uuid": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+      "orderId": "O-12345",
+      "status": "WAITING_FOR_DEPOSIT",
+      "email": "example@aidcoin.co",
+      "depositAddress": "1HfL94JWjmmjroyAHTDhRQqUwZ7PR4JoUZ",
+      "destination": "0x4Aa0f67D9A0666b9Dd0Ee6d397334903AE337e1E",
+      "exchangeRate": "64625.850340136300000000",
+      "fromCurrency": "BTC",
+      "toCurrency": "AID",
+      "invoicedAmount": "0.100000000000000000",
+      "orderedAmount": "6459.585034010000000000",
+      "hash": null,
+      "refundAddress": "1Nv92z71iinNVPncrDm4RPHyo17S9bEVPG",
+      "createdAt": "2018-07-26T14:44:28+02:00",
+      "expireDate": "2018-07-26T15:04:26+02:00",
+      "chargedFee": "3.000000000000000000"
+    }
+  ],
+  "count": 23,
+  "pagination": {
+    "page": 1,
+    "pages": 12,
+    "next": "/api/v1/aidpay/payments/charities?limit=2&offset=2",
+    "prev": null
+  }
 }
 ```
 
