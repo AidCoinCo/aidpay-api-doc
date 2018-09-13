@@ -320,12 +320,24 @@ Description:
 Params:
 + limit (default 12) 
 + offset (default 0) 
++ filters[status] (optional)
+
+::: warning NOTES
+Status could be 
+* WAITING_FOR_DEPOSIT
+* DEPOSIT_RECEIVED
+* DEPOSIT_CONFIRMED
+* EXECUTED
+* REFUNDED
+* CANCELED
+* EXPIRED
+:::
 
 Request:
 
 ```bash
 curl -X GET \
-  https://www.aidchain.co/api/v1/aidpay/payments/orders?limit=2&offset=0 \
+  https://www.aidchain.co/api/v1/aidpay/payments/orders?limit=2&offset=0&filters%5Bstatus%5D=WAITING_FOR_DEPOSIT \
   -H 'Content-Type: application/json' \
   -H 'api-key: <your api key>' \
   -H 'sign:  <signed message from API call body>'
