@@ -254,6 +254,18 @@ Response:
   "BTC": {
     "min": "0.000138789473684",
     "max": "0.408954187602"
+  },
+  "USD": {
+    "min": "0.672345",
+    "max": "1867.625"
+  },
+  "EUR": {
+    "min": "0.575163",
+    "max": "1597.675"
+  },
+  "GBP": {
+    "min": "0.531",
+    "max": "1475"
   }
 }
 ```
@@ -576,6 +588,10 @@ Response:
 ## Return url
 
 When your payment has been `EXECUTED` you will receive a POST to the `return_url` provided during the setup process.
+
+::: warning NOTES
+This is a Server To Server http call.
+:::
 
 ::: warning NOTES
 Before updating your order status you should sign the call BODY with your API Secret and then check that it matches our provided sign in HEADERS.
