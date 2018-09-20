@@ -39,6 +39,14 @@ The code will look like the one below:
 </a>
 ```
 
+The widget will look like this:
+
+<a onclick="aidpay_click(this, event);" href="https://www.aidchain.co/aidpay/charity/24"><img src="https://www.aidchain.co/assets/images/buttons/aidpay/aidpay-donate-default.svg"></a>
+
 # Custom Widget
 
 For a customized version of our widget contact [AIDCoin](https://www.aidchain.co/aidpay).
+
+The custom widget will look like this:
+
+<a onclick="aidpay_click(this, event);" href="https://www.aidchain.co/aidpay/custom/3"><img src="https://www.aidchain.co/assets/images/buttons/aidpay/aidpay-donate-default.svg"></a>
