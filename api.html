@@ -7,7 +7,7 @@
     <meta name="description" content="AIDPay is a payment gateway/embeddable widget that allows charities registered on the AidChain platform to accept donations in different cryptocurrencies directly on their website.">
     <script>function aidpay_click(a,e){e.preventDefault();window.open(a.href,'aidpay_window','width=480,height=800,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=0,left=0,top=0');return false;}</script>
     
-    <link rel="preload" href="/assets/css/0.styles.3dbb6ab1.css" as="style"><link rel="preload" href="/assets/js/app.7e47b7e8.js" as="script"><link rel="preload" href="/assets/js/5.8d94d022.js" as="script"><link rel="prefetch" href="/assets/js/2.d8d0300f.js"><link rel="prefetch" href="/assets/js/3.c2cef8c0.js"><link rel="prefetch" href="/assets/js/4.f7467972.js"><link rel="prefetch" href="/assets/js/6.5ea46abe.js">
+    <link rel="preload" href="/assets/css/0.styles.3dbb6ab1.css" as="style"><link rel="preload" href="/assets/js/app.1d6040dc.js" as="script"><link rel="preload" href="/assets/js/5.eb3d14b5.js" as="script"><link rel="prefetch" href="/assets/js/2.d8d0300f.js"><link rel="prefetch" href="/assets/js/3.c2cef8c0.js"><link rel="prefetch" href="/assets/js/4.f7467972.js"><link rel="prefetch" href="/assets/js/6.5ea46abe.js">
     <link rel="stylesheet" href="/assets/css/0.styles.3dbb6ab1.css">
   </head>
   <body>
@@ -41,153 +41,153 @@
     <span class="token property">&quot;prev&quot;</span><span class="token operator">:</span> <span class="token null">null</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-</code></pre></div><h3 id="get-payments-currencies"><a href="#get-payments-currencies" aria-hidden="true" class="header-anchor">#</a> GET /payments/currencies</h3> <p>Description:</p> <ul><li>Returns the list of enabled currencies as a flat array with the associated AID rate value.</li></ul> <p>Request:</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">curl</span> -X GET \
+</code></pre></div><h3 id="get-payments-currencies"><a href="#get-payments-currencies" aria-hidden="true" class="header-anchor">#</a> GET /payments/currencies</h3> <p>Description:</p> <ul><li>Returns the list of enabled currencies as a flat array with the associated DAI rate value.</li></ul> <p>Request:</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">curl</span> -X GET \
   https://www.aidchain.co/api/v1/aidpay/payments/currencies \
   -H <span class="token string">'Content-Type: application/json'</span> \
   -H <span class="token string">'api-key: &lt;your api key&gt;'</span> \
   -H <span class="token string">'sign:  &lt;signed message from API call body&gt;'</span>
 </code></pre></div><p>Response:</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">[</span>
   <span class="token punctuation">{</span>
+    <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Aidcoin&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;AID&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;daiRate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.0459845847&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
     <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Attention Token&quot;</span><span class="token punctuation">,</span>
     <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;BAT&quot;</span><span class="token punctuation">,</span>
-    <span class="token property">&quot;aid_rate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2.4326873385&quot;</span>
+    <span class="token property">&quot;daiRate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.1553115365&quot;</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token punctuation">{</span>
     <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Blackcoin&quot;</span><span class="token punctuation">,</span>
     <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;BC&quot;</span><span class="token punctuation">,</span>
-    <span class="token property">&quot;aid_rate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1.2065245478&quot;</span>
+    <span class="token property">&quot;daiRate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.0639980109&quot;</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token punctuation">{</span>
     <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Bitcoin&quot;</span><span class="token punctuation">,</span>
     <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;BTC&quot;</span><span class="token punctuation">,</span>
-    <span class="token property">&quot;aid_rate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;61369.5090439273&quot;</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token punctuation">{</span>
-    <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Dai Stablecoin&quot;</span><span class="token punctuation">,</span>
-    <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;DAI&quot;</span><span class="token punctuation">,</span>
-    <span class="token property">&quot;aid_rate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;7.444121447&quot;</span>
+    <span class="token property">&quot;daiRate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;6153.6548980605&quot;</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token punctuation">{</span>
     <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Dash&quot;</span><span class="token punctuation">,</span>
     <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;DASH&quot;</span><span class="token punctuation">,</span>
-    <span class="token property">&quot;aid_rate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1842.9453811369&quot;</span>
+    <span class="token property">&quot;daiRate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;159.9950888861&quot;</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token punctuation">{</span>
     <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Decred&quot;</span><span class="token punctuation">,</span>
     <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;DCR&quot;</span><span class="token punctuation">,</span>
-    <span class="token property">&quot;aid_rate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;487.2174418604&quot;</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token punctuation">{</span>
-    <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Digixdao&quot;</span><span class="token punctuation">,</span>
-    <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;DGD&quot;</span><span class="token punctuation">,</span>
-    <span class="token property">&quot;aid_rate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;707.5329457364&quot;</span>
+    <span class="token property">&quot;daiRate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;37.8817317255&quot;</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token punctuation">{</span>
     <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Dogecoin&quot;</span><span class="token punctuation">,</span>
     <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;DOGE&quot;</span><span class="token punctuation">,</span>
-    <span class="token property">&quot;aid_rate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.0257751937&quot;</span>
+    <span class="token property">&quot;daiRate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.0049602187&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Enjincoin&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ENJ&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;daiRate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.0461524117&quot;</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token punctuation">{</span>
     <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Essentia&quot;</span><span class="token punctuation">,</span>
     <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ESS&quot;</span><span class="token punctuation">,</span>
-    <span class="token property">&quot;aid_rate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.0552325581&quot;</span>
+    <span class="token property">&quot;daiRate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.0021755345&quot;</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token punctuation">{</span>
     <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Ethereum&quot;</span><span class="token punctuation">,</span>
     <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ETH&quot;</span><span class="token punctuation">,</span>
-    <span class="token property">&quot;aid_rate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;3557.2835917926&quot;</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token punctuation">{</span>
-    <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Flyp.me Token&quot;</span><span class="token punctuation">,</span>
-    <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;FYP&quot;</span><span class="token punctuation">,</span>
-    <span class="token property">&quot;aid_rate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.7364341085&quot;</span>
+    <span class="token property">&quot;daiRate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;196.2888531824&quot;</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token punctuation">{</span>
     <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Gamecredits&quot;</span><span class="token punctuation">,</span>
     <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;GAME&quot;</span><span class="token punctuation">,</span>
-    <span class="token property">&quot;aid_rate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;3.5385658914&quot;</span>
+    <span class="token property">&quot;daiRate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.1615949776&quot;</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token punctuation">{</span>
     <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Gridcoin&quot;</span><span class="token punctuation">,</span>
     <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;GRC&quot;</span><span class="token punctuation">,</span>
-    <span class="token property">&quot;aid_rate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.2424095607&quot;</span>
+    <span class="token property">&quot;daiRate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.0106458229&quot;</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token punctuation">{</span>
     <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Groestlcoin&quot;</span><span class="token punctuation">,</span>
     <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;GRS&quot;</span><span class="token punctuation">,</span>
-    <span class="token property">&quot;aid_rate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;5.5158914728&quot;</span>
+    <span class="token property">&quot;daiRate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.5194300099&quot;</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token punctuation">{</span>
     <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Litecoin&quot;</span><span class="token punctuation">,</span>
     <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;LTC&quot;</span><span class="token punctuation">,</span>
-    <span class="token property">&quot;aid_rate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;647.1420865633&quot;</span>
+    <span class="token property">&quot;daiRate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;50.6322725012&quot;</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token punctuation">{</span>
     <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Pivx&quot;</span><span class="token punctuation">,</span>
     <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;PIVX&quot;</span><span class="token punctuation">,</span>
-    <span class="token property">&quot;aid_rate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;14.5648255813&quot;</span>
+    <span class="token property">&quot;daiRate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1.1255034808&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Power Ledger&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;POWR&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;daiRate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.1737176777&quot;</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token punctuation">{</span>
     <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Peercoin&quot;</span><span class="token punctuation">,</span>
     <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;PPC&quot;</span><span class="token punctuation">,</span>
-    <span class="token property">&quot;aid_rate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;8.5309754521&quot;</span>
+    <span class="token property">&quot;daiRate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.8839109895&quot;</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token punctuation">{</span>
     <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Augur&quot;</span><span class="token punctuation">,</span>
     <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;REP&quot;</span><span class="token punctuation">,</span>
-    <span class="token property">&quot;aid_rate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;226.276744186&quot;</span>
+    <span class="token property">&quot;daiRate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;11.7099129786&quot;</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token punctuation">{</span>
     <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Syscoin&quot;</span><span class="token punctuation">,</span>
     <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;SYS&quot;</span><span class="token punctuation">,</span>
-    <span class="token property">&quot;aid_rate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1.2415051679&quot;</span>
+    <span class="token property">&quot;daiRate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.0851665837&quot;</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token punctuation">{</span>
     <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;BLOCKv&quot;</span><span class="token punctuation">,</span>
     <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;VEE&quot;</span><span class="token punctuation">,</span>
-    <span class="token property">&quot;aid_rate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.1528100775&quot;</span>
+    <span class="token property">&quot;daiRate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.0089843361&quot;</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token punctuation">{</span>
     <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Vertcoin&quot;</span><span class="token punctuation">,</span>
     <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;VTC&quot;</span><span class="token punctuation">,</span>
-    <span class="token property">&quot;aid_rate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;10.0830103359&quot;</span>
+    <span class="token property">&quot;daiRate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.6460106911&quot;</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token punctuation">{</span>
     <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Zcash&quot;</span><span class="token punctuation">,</span>
     <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ZEC&quot;</span><span class="token punctuation">,</span>
-    <span class="token property">&quot;aid_rate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1669.2506459948&quot;</span>
+    <span class="token property">&quot;daiRate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;110.0055656389&quot;</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token punctuation">{</span>
     <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0x&quot;</span><span class="token punctuation">,</span>
     <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ZRX&quot;</span><span class="token punctuation">,</span>
-    <span class="token property">&quot;aid_rate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;8.4763565891&quot;</span>
+    <span class="token property">&quot;daiRate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.6442757334&quot;</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">]</span>
-</code></pre></div><h3 id="get-payments-from-currency-limits"><a href="#get-payments-from-currency-limits" aria-hidden="true" class="header-anchor">#</a> GET /payments/[from-currency]/limits</h3> <p>Description:</p> <ul><li>Returns the min and max amounts of tokens to be exchanged both in AID and in selected currency.</li></ul> <p>Params:</p> <ul><li>fromCurrency: the currency from which to start the transaction</li></ul> <p>Request:</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">curl</span> -X GET \
+</code></pre></div><h3 id="get-payments-from-currency-limits"><a href="#get-payments-from-currency-limits" aria-hidden="true" class="header-anchor">#</a> GET /payments/[from-currency]/limits</h3> <p>Description:</p> <ul><li>Returns the min and max amounts of tokens to be exchanged both in DAI and in selected currency.</li></ul> <p>Params:</p> <ul><li>fromCurrency: the currency from which to start the transaction</li></ul> <p>Request:</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">curl</span> -X GET \
   https://www.aidchain.co/api/v1/aidpay/payments/BTC/limits \
   -H <span class="token string">'Content-Type: application/json'</span> \
   -H <span class="token string">'api-key: &lt;your api key&gt;'</span> \
   -H <span class="token string">'sign:  &lt;signed message from API call body&gt;'</span>
 </code></pre></div><p>Response:</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
-  <span class="token property">&quot;AID&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">&quot;min&quot;</span><span class="token operator">:</span> <span class="token string">&quot;9.0&quot;</span><span class="token punctuation">,</span>
-    <span class="token property">&quot;max&quot;</span><span class="token operator">:</span> <span class="token string">&quot;26519.21353053&quot;</span>
+  <span class="token property">&quot;DAI&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;min&quot;</span><span class="token operator">:</span> <span class="token string">&quot;4.5&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;max&quot;</span><span class="token operator">:</span> <span class="token string">&quot;6299.05278899&quot;</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token property">&quot;BTC&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">&quot;min&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.000138789473684&quot;</span><span class="token punctuation">,</span>
-    <span class="token property">&quot;max&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.408954187602&quot;</span>
+    <span class="token property">&quot;min&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.000731227272727&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;max&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1.02356426481&quot;</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token property">&quot;USD&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">&quot;min&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.672345&quot;</span><span class="token punctuation">,</span>
-    <span class="token property">&quot;max&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1867.625&quot;</span>
+    <span class="token property">&quot;min&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.226368&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;max&quot;</span><span class="token operator">:</span> <span class="token string">&quot;316.867551497&quot;</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token property">&quot;EUR&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">&quot;min&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.575163&quot;</span><span class="token punctuation">,</span>
-    <span class="token property">&quot;max&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1597.675&quot;</span>
+    <span class="token property">&quot;min&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.1956285&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;max&quot;</span><span class="token operator">:</span> <span class="token string">&quot;273.838721896&quot;</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token property">&quot;GBP&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">&quot;min&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.531&quot;</span><span class="token punctuation">,</span>
-    <span class="token property">&quot;max&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1475&quot;</span>
+    <span class="token property">&quot;min&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.17145&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;max&quot;</span><span class="token operator">:</span> <span class="token string">&quot;239.993911261&quot;</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre></div><h3 id="get-payments-uuid"><a href="#get-payments-uuid" aria-hidden="true" class="header-anchor">#</a> GET /payments/[uuid]</h3> <p>Description:</p> <ul><li>Returns the status of the payment for a given uuid.</li></ul> <p>Params:</p> <ul><li>uuid: the unique id of the payment to search for</li></ul> <div class="warning custom-block"><p class="custom-block-title">NOTES</p> <p>Status could be</p> <ul><li>WAITING_FOR_DEPOSIT</li> <li>DEPOSIT_RECEIVED</li> <li>DEPOSIT_CONFIRMED</li> <li>EXECUTED</li> <li>REFUNDED</li> <li>CANCELED</li> <li>EXPIRED</li></ul></div> <p>Request:</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">curl</span> -X GET \
@@ -204,14 +204,14 @@
   <span class="token property">&quot;destination&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0x4Aa0f67D9A0666b9Dd0Ee6d397334903AE337e1E&quot;</span><span class="token punctuation">,</span>
   <span class="token property">&quot;exchangeRate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;64625.850340136300000000&quot;</span><span class="token punctuation">,</span>
   <span class="token property">&quot;fromCurrency&quot;</span><span class="token operator">:</span> <span class="token string">&quot;BTC&quot;</span><span class="token punctuation">,</span>
-  <span class="token property">&quot;toCurrency&quot;</span><span class="token operator">:</span> <span class="token string">&quot;AID&quot;</span><span class="token punctuation">,</span>
-  <span class="token property">&quot;invoicedAmount&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.100000000000000000&quot;</span><span class="token punctuation">,</span>
-  <span class="token property">&quot;orderedAmount&quot;</span><span class="token operator">:</span> <span class="token string">&quot;6459.585034010000000000&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;toCurrency&quot;</span><span class="token operator">:</span> <span class="token string">&quot;DAI&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;invoicedAmount&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.1&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;orderedAmount&quot;</span><span class="token operator">:</span> <span class="token string">&quot;616.97941526&quot;</span><span class="token punctuation">,</span>
   <span class="token property">&quot;hash&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
   <span class="token property">&quot;refundAddress&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1Nv92z71iinNVPncrDm4RPHyo17S9bEVPG&quot;</span><span class="token punctuation">,</span>
-  <span class="token property">&quot;createdAt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2018-07-26T14:44:28+02:00&quot;</span><span class="token punctuation">,</span>
-  <span class="token property">&quot;expireDate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2018-07-26T15:04:26+02:00&quot;</span><span class="token punctuation">,</span>
-  <span class="token property">&quot;chargedFee&quot;</span><span class="token operator">:</span> <span class="token string">&quot;3.000000000000000000&quot;</span>
+  <span class="token property">&quot;createdAt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2018-10-11T11:56:57+02:00&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;expireDate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2018-10-11T12:16:56+02:00&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;chargedFee&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1.5&quot;</span>
 <span class="token punctuation">}</span>
 </code></pre></div><h3 id="get-payments-orders"><a href="#get-payments-orders" aria-hidden="true" class="header-anchor">#</a> GET /payments/orders</h3> <p>Description:</p> <ul><li>Returns the customer's order list.</li></ul> <p>Params:</p> <ul><li>limit (default 12)</li> <li>offset (default 0)</li> <li>filters[status] (optional)</li></ul> <div class="warning custom-block"><p class="custom-block-title">NOTES</p> <p>Status could be</p> <ul><li>WAITING_FOR_DEPOSIT</li> <li>DEPOSIT_RECEIVED</li> <li>DEPOSIT_CONFIRMED</li> <li>EXECUTED</li> <li>REFUNDED</li> <li>CANCELED</li> <li>EXPIRED</li></ul></div> <p>Request:</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">curl</span> -X GET \
   https://www.aidchain.co/api/v1/aidpay/payments/orders?limit<span class="token operator">=</span>2<span class="token operator">&amp;</span>offset<span class="token operator">=</span>0<span class="token operator">&amp;</span>filters%5Bstatus%5D<span class="token operator">=</span>WAITING_FOR_DEPOSIT \
@@ -227,16 +227,16 @@
       <span class="token property">&quot;email&quot;</span><span class="token operator">:</span> <span class="token string">&quot;example@aidcoin.co&quot;</span><span class="token punctuation">,</span>
       <span class="token property">&quot;depositAddress&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1HfL94JWjmmjroyAHTDhRQqUwZ7PR4JoUZ&quot;</span><span class="token punctuation">,</span>
       <span class="token property">&quot;destination&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0x4Aa0f67D9A0666b9Dd0Ee6d397334903AE337e1E&quot;</span><span class="token punctuation">,</span>
-      <span class="token property">&quot;exchangeRate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;64625.850340136300000000&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;exchangeRate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;6138.0122760247&quot;</span><span class="token punctuation">,</span>
       <span class="token property">&quot;fromCurrency&quot;</span><span class="token operator">:</span> <span class="token string">&quot;BTC&quot;</span><span class="token punctuation">,</span>
-      <span class="token property">&quot;toCurrency&quot;</span><span class="token operator">:</span> <span class="token string">&quot;AID&quot;</span><span class="token punctuation">,</span>
-      <span class="token property">&quot;invoicedAmount&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.100000000000000000&quot;</span><span class="token punctuation">,</span>
-      <span class="token property">&quot;orderedAmount&quot;</span><span class="token operator">:</span> <span class="token string">&quot;6459.585034010000000000&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;toCurrency&quot;</span><span class="token operator">:</span> <span class="token string">&quot;DAI&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;invoicedAmount&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.1&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;orderedAmount&quot;</span><span class="token operator">:</span> <span class="token string">&quot;612.3012276&quot;</span><span class="token punctuation">,</span>
       <span class="token property">&quot;hash&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
       <span class="token property">&quot;refundAddress&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1Nv92z71iinNVPncrDm4RPHyo17S9bEVPG&quot;</span><span class="token punctuation">,</span>
-      <span class="token property">&quot;createdAt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2018-07-26T14:44:28+02:00&quot;</span><span class="token punctuation">,</span>
-      <span class="token property">&quot;expireDate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2018-07-26T15:04:26+02:00&quot;</span><span class="token punctuation">,</span>
-      <span class="token property">&quot;chargedFee&quot;</span><span class="token operator">:</span> <span class="token string">&quot;3.000000000000000000&quot;</span>
+      <span class="token property">&quot;createdAt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2018-10-11T11:56:57+02:00&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;expireDate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2018-10-11T12:16:56+02:00&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;chargedFee&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1.5&quot;</span>
     <span class="token punctuation">}</span><span class="token punctuation">,</span>
     <span class="token punctuation">{</span>
       <span class="token property">&quot;uuid&quot;</span><span class="token operator">:</span> <span class="token string">&quot;aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee&quot;</span><span class="token punctuation">,</span>
@@ -245,16 +245,16 @@
       <span class="token property">&quot;email&quot;</span><span class="token operator">:</span> <span class="token string">&quot;example@aidcoin.co&quot;</span><span class="token punctuation">,</span>
       <span class="token property">&quot;depositAddress&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1HfL94JWjmmjroyAHTDhRQqUwZ7PR4JoUZ&quot;</span><span class="token punctuation">,</span>
       <span class="token property">&quot;destination&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0x4Aa0f67D9A0666b9Dd0Ee6d397334903AE337e1E&quot;</span><span class="token punctuation">,</span>
-      <span class="token property">&quot;exchangeRate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;64625.850340136300000000&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;exchangeRate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;6138.0122760247&quot;</span><span class="token punctuation">,</span>
       <span class="token property">&quot;fromCurrency&quot;</span><span class="token operator">:</span> <span class="token string">&quot;BTC&quot;</span><span class="token punctuation">,</span>
-      <span class="token property">&quot;toCurrency&quot;</span><span class="token operator">:</span> <span class="token string">&quot;AID&quot;</span><span class="token punctuation">,</span>
-      <span class="token property">&quot;invoicedAmount&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.100000000000000000&quot;</span><span class="token punctuation">,</span>
-      <span class="token property">&quot;orderedAmount&quot;</span><span class="token operator">:</span> <span class="token string">&quot;6459.585034010000000000&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;toCurrency&quot;</span><span class="token operator">:</span> <span class="token string">&quot;DAI&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;invoicedAmount&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.1&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;orderedAmount&quot;</span><span class="token operator">:</span> <span class="token string">&quot;612.3012276&quot;</span><span class="token punctuation">,</span>
       <span class="token property">&quot;hash&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
       <span class="token property">&quot;refundAddress&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1Nv92z71iinNVPncrDm4RPHyo17S9bEVPG&quot;</span><span class="token punctuation">,</span>
-      <span class="token property">&quot;createdAt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2018-07-26T14:44:28+02:00&quot;</span><span class="token punctuation">,</span>
-      <span class="token property">&quot;expireDate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2018-07-26T15:04:26+02:00&quot;</span><span class="token punctuation">,</span>
-      <span class="token property">&quot;chargedFee&quot;</span><span class="token operator">:</span> <span class="token string">&quot;3.000000000000000000&quot;</span>
+      <span class="token property">&quot;createdAt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2018-10-11T11:56:57+02:00&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;expireDate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2018-10-11T12:16:56+02:00&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;chargedFee&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1.5&quot;</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">]</span><span class="token punctuation">,</span>
   <span class="token property">&quot;count&quot;</span><span class="token operator">:</span> <span class="token number">23</span><span class="token punctuation">,</span>
@@ -286,16 +286,16 @@
   <span class="token property">&quot;email&quot;</span><span class="token operator">:</span> <span class="token string">&quot;example@aidcoin.co&quot;</span><span class="token punctuation">,</span>
   <span class="token property">&quot;depositAddress&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1HfL94JWjmmjroyAHTDhRQqUwZ7PR4JoUZ&quot;</span><span class="token punctuation">,</span>
   <span class="token property">&quot;destination&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0x4Aa0f67D9A0666b9Dd0Ee6d397334903AE337e1E&quot;</span><span class="token punctuation">,</span>
-  <span class="token property">&quot;exchangeRate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;64625.850340136300000000&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;exchangeRate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;6197.5710529613&quot;</span><span class="token punctuation">,</span>
   <span class="token property">&quot;fromCurrency&quot;</span><span class="token operator">:</span> <span class="token string">&quot;BTC&quot;</span><span class="token punctuation">,</span>
-  <span class="token property">&quot;toCurrency&quot;</span><span class="token operator">:</span> <span class="token string">&quot;AID&quot;</span><span class="token punctuation">,</span>
-  <span class="token property">&quot;invoicedAmount&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.100000000000000000&quot;</span><span class="token punctuation">,</span>
-  <span class="token property">&quot;orderedAmount&quot;</span><span class="token operator">:</span> <span class="token string">&quot;6459.585034010000000000&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;toCurrency&quot;</span><span class="token operator">:</span> <span class="token string">&quot;DAI&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;invoicedAmount&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.163838&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;orderedAmount&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1000.3971577&quot;</span><span class="token punctuation">,</span>
   <span class="token property">&quot;hash&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
   <span class="token property">&quot;refundAddress&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1Nv92z71iinNVPncrDm4RPHyo17S9bEVPG&quot;</span><span class="token punctuation">,</span>
-  <span class="token property">&quot;createdAt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2018-07-26T14:44:28+02:00&quot;</span><span class="token punctuation">,</span>
-  <span class="token property">&quot;expireDate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2018-07-26T15:04:26+02:00&quot;</span><span class="token punctuation">,</span>
-  <span class="token property">&quot;chargedFee&quot;</span><span class="token operator">:</span> <span class="token string">&quot;3.000000000000000000&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;createdAt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2018-10-11T11:56:57+02:00&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;expireDate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2018-10-11T12:16:56+02:00&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;chargedFee&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1.5&quot;</span><span class="token punctuation">,</span>
   <span class="token property">&quot;orderLink&quot;</span><span class="token operator">:</span> <span class="token string">&quot;https://www.aidchain.co/aidpay/payment/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee?return=https%3A//your.client/return/url&quot;</span>
 <span class="token punctuation">}</span>
 </code></pre></div><p>The <code>invoicedAmount</code> will need to be sent to the <code>depositAddress</code> (by your users or through your system) within 20 minutes.</p> <p>If you want to use the AidPay interface redirect your users to <code>orderLink</code>.</p> <h3 id="post-payments-order"><a href="#post-payments-order" aria-hidden="true" class="header-anchor">#</a> POST /payments/order</h3> <div class="warning custom-block"><p class="custom-block-title">WARNING</p> <p>ONLY FOR MERCHANT ACCOUNTS</p></div> <p>Description:</p> <ul><li>Create an order.</li></ul> <p>Params:</p> <ul><li>orderId: a reference for the customer (i.e. his progressive order id). Will be sent for reference in notifications</li> <li>fromCurrency: the currency from which to start the transaction</li> <li>fromFiat: the FIAT currency from which to start the conversion</li> <li>fiatAmount: the amount to convert (in &quot;fromFiat&quot;)</li> <li>email: your customer notification email</li> <li>refundAddress: an optional address compatible with &quot;fromCurrency&quot; for receiving refunds in case of problems with the blockchain</li> <li>return: the return URL that will be used to redirect your buyers back to your site (optional: only if you are using the AidPay interface)</li></ul> <p>Request:</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">curl</span> -X POST \
@@ -306,7 +306,7 @@
   -d <span class="token string">'{
        &quot;orderId&quot;: &quot;O-12345&quot;,
        &quot;fromCurrency&quot;: &quot;BTC&quot;,
-       &quot;fromFiat&quot;: &quot;EUR&quot;,
+       &quot;fromFiat&quot;: &quot;USD&quot;,
        &quot;fiatAmount&quot;: &quot;1000&quot;,
        &quot;email&quot;: &quot;example@aidcoin.co&quot;,
        &quot;refundAddress&quot;: &quot;1Nv92z71iinNVPncrDm4RPHyo17S9bEVPG&quot;,
@@ -319,16 +319,16 @@
   <span class="token property">&quot;email&quot;</span><span class="token operator">:</span> <span class="token string">&quot;example@aidcoin.co&quot;</span><span class="token punctuation">,</span>
   <span class="token property">&quot;depositAddress&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1HfL94JWjmmjroyAHTDhRQqUwZ7PR4JoUZ&quot;</span><span class="token punctuation">,</span>
   <span class="token property">&quot;destination&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0x4Aa0f67D9A0666b9Dd0Ee6d397334903AE337e1E&quot;</span><span class="token punctuation">,</span>
-  <span class="token property">&quot;exchangeRate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;90090.090090090000000000&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;exchangeRate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;6159.7809855648&quot;</span><span class="token punctuation">,</span>
   <span class="token property">&quot;fromCurrency&quot;</span><span class="token operator">:</span> <span class="token string">&quot;BTC&quot;</span><span class="token punctuation">,</span>
-  <span class="token property">&quot;toCurrency&quot;</span><span class="token operator">:</span> <span class="token string">&quot;AID&quot;</span><span class="token punctuation">,</span>
-  <span class="token property">&quot;invoicedAmount&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.1737232&quot;</span><span class="token punctuation">,</span>
-  <span class="token property">&quot;orderedAmount&quot;</span><span class="token operator">:</span> <span class="token string">&quot;15647.73811945&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;toCurrency&quot;</span><span class="token operator">:</span> <span class="token string">&quot;DAI&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;invoicedAmount&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.16258695&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;orderedAmount&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1000&quot;</span><span class="token punctuation">,</span>
   <span class="token property">&quot;hash&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
   <span class="token property">&quot;refundAddress&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1Nv92z71iinNVPncrDm4RPHyo17S9bEVPG&quot;</span><span class="token punctuation">,</span>
-  <span class="token property">&quot;createdAt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2018-09-05T10:40:46+02:00&quot;</span><span class="token punctuation">,</span>
-  <span class="token property">&quot;expireDate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2018-09-05T11:00:44+02:00&quot;</span><span class="token punctuation">,</span>
-  <span class="token property">&quot;chargedFee&quot;</span><span class="token operator">:</span> <span class="token string">&quot;3.000000000000000000&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;createdAt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2018-10-11T11:56:57+02:00&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;expireDate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2018-10-11T12:16:56+02:00&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;chargedFee&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1.5&quot;</span><span class="token punctuation">,</span>
   <span class="token property">&quot;orderLink&quot;</span><span class="token operator">:</span> <span class="token string">&quot;https://www.aidchain.co/aidpay/payment/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee?return=https%3A//your.client/return/url&quot;</span>
 <span class="token punctuation">}</span>
 </code></pre></div><p>The <code>invoicedAmount</code> will need to be sent to the <code>depositAddress</code> (by your users or through your system) within 20 minutes.</p> <p>If you want to use the AidPay interface redirect your users to <code>orderLink</code>.</p> <h3 id="post-payments-cancel"><a href="#post-payments-cancel" aria-hidden="true" class="header-anchor">#</a> POST /payments/cancel</h3> <p>Description:</p> <ul><li>Delete a payment for a given uuid.</li></ul> <p>Params:</p> <ul><li>uuid: the unique id of the payment to search for</li></ul> <p>Request:</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">curl</span> -X POST \
@@ -346,16 +346,16 @@
   <span class="token property">&quot;email&quot;</span><span class="token operator">:</span> <span class="token string">&quot;example@aidcoin.co&quot;</span><span class="token punctuation">,</span>
   <span class="token property">&quot;depositAddress&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1HfL94JWjmmjroyAHTDhRQqUwZ7PR4JoUZ&quot;</span><span class="token punctuation">,</span>
   <span class="token property">&quot;destination&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0x4Aa0f67D9A0666b9Dd0Ee6d397334903AE337e1E&quot;</span><span class="token punctuation">,</span>
-  <span class="token property">&quot;exchangeRate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;64625.850340136300000000&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;exchangeRate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;6138.0122760247&quot;</span><span class="token punctuation">,</span>
   <span class="token property">&quot;fromCurrency&quot;</span><span class="token operator">:</span> <span class="token string">&quot;BTC&quot;</span><span class="token punctuation">,</span>
-  <span class="token property">&quot;toCurrency&quot;</span><span class="token operator">:</span> <span class="token string">&quot;AID&quot;</span><span class="token punctuation">,</span>
-  <span class="token property">&quot;invoicedAmount&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.100000000000000000&quot;</span><span class="token punctuation">,</span>
-  <span class="token property">&quot;orderedAmount&quot;</span><span class="token operator">:</span> <span class="token string">&quot;6459.585034010000000000&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;toCurrency&quot;</span><span class="token operator">:</span> <span class="token string">&quot;DAI&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;invoicedAmount&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.1&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;orderedAmount&quot;</span><span class="token operator">:</span> <span class="token string">&quot;612.3012276&quot;</span><span class="token punctuation">,</span>
   <span class="token property">&quot;hash&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
   <span class="token property">&quot;refundAddress&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1Nv92z71iinNVPncrDm4RPHyo17S9bEVPG&quot;</span><span class="token punctuation">,</span>
-  <span class="token property">&quot;createdAt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2018-07-26T14:44:28+02:00&quot;</span><span class="token punctuation">,</span>
-  <span class="token property">&quot;expireDate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2018-07-26T15:04:26+02:00&quot;</span><span class="token punctuation">,</span>
-  <span class="token property">&quot;chargedFee&quot;</span><span class="token operator">:</span> <span class="token string">&quot;3.000000000000000000&quot;</span>
+  <span class="token property">&quot;createdAt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2018-10-11T11:56:57+02:00&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;expireDate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2018-10-11T12:16:56+02:00&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;chargedFee&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1.5&quot;</span>
 <span class="token punctuation">}</span>
 </code></pre></div><h2 id="return-url"><a href="#return-url" aria-hidden="true" class="header-anchor">#</a> Return url</h2> <p>When your payment has been <code>EXECUTED</code> you will receive a POST to the <code>return_url</code> provided during the setup process.</p> <div class="warning custom-block"><p class="custom-block-title">NOTES</p> <p>This is a Server To Server http call.</p></div> <div class="warning custom-block"><p class="custom-block-title">NOTES</p> <p>Before updating your order status you should sign the call BODY with your API Secret and then check that it matches our provided sign in HEADERS.</p></div> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">curl</span> -X POST \
   https://your-provided-return-url \
@@ -368,22 +368,22 @@
         &quot;email&quot;: &quot;example@aidcoin.co&quot;,
         &quot;depositAddress&quot;: &quot;1HfL94JWjmmjroyAHTDhRQqUwZ7PR4JoUZ&quot;,
         &quot;destination&quot;: &quot;0x4Aa0f67D9A0666b9Dd0Ee6d397334903AE337e1E&quot;,
-        &quot;exchangeRate&quot;: &quot;64625.850340136300000000&quot;,
+        &quot;exchangeRate&quot;: &quot;6138.0122760247&quot;,
         &quot;fromCurrency&quot;: &quot;BTC&quot;,
-        &quot;toCurrency&quot;: &quot;AID&quot;,
-        &quot;invoicedAmount&quot;: &quot;0.100000000000000000&quot;,
-        &quot;orderedAmount&quot;: &quot;6459.585034010000000000&quot;,
+        &quot;toCurrency&quot;: &quot;DAI&quot;,
+        &quot;invoicedAmount&quot;: &quot;0.1&quot;,
+        &quot;orderedAmount&quot;: &quot;612.3012276&quot;,
         &quot;hash&quot;: &quot;0xc28b0..........ac11&quot;,
         &quot;refundAddress&quot;: &quot;1Nv92z71iinNVPncrDm4RPHyo17S9bEVPG&quot;,
-        &quot;createdAt&quot;: &quot;2018-07-26T14:44:28+02:00&quot;,
-        &quot;expireDate&quot;: &quot;2018-07-26T15:04:26+02:00&quot;,
-        &quot;chargedFee&quot;: &quot;3.000000000000000000&quot;
+        &quot;createdAt&quot;: &quot;2018-10-11T11:56:57+02:00&quot;,
+        &quot;expireDate&quot;: &quot;2018-10-11T12:16:56+02:00&quot;,
+        &quot;chargedFee&quot;: &quot;1.5&quot;
       }'</span>
 </code></pre></div></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
         ←
         <a href="/embeddable-widget.html" class="prev">
           Embeddable Widget
         </a></span> <!----></p></div> </div> <!----></div></div>
-    <script src="/assets/js/5.8d94d022.js" defer></script><script src="/assets/js/app.7e47b7e8.js" defer></script>
+    <script src="/assets/js/5.eb3d14b5.js" defer></script><script src="/assets/js/app.1d6040dc.js" defer></script>
   </body>
 </html>
