@@ -345,17 +345,6 @@ Params:
 + offset (default 0) 
 + filters[status] (optional)
 
-::: warning NOTES
-Status could be 
-* WAITING_FOR_DEPOSIT
-* DEPOSIT_RECEIVED
-* DEPOSIT_CONFIRMED
-* EXECUTED
-* REFUNDED
-* CANCELED
-* EXPIRED
-:::
-
 Request:
 
 ```bash
