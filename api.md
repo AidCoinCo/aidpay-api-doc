@@ -622,7 +622,7 @@ curl -X POST \
         "uuid": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
         "orderId": "O-12345",
         "status": "EXECUTED",
-        "paymentStatus": "PAYMENT_RECEIVED",
+        "paymentStatus": "PAYMENT_CONFIRMED",
         "email": "example@aidcoin.co",
         "depositAddress": "1HfL94JWjmmjroyAHTDhRQqUwZ7PR4JoUZ",
         "destination": "0x4Aa0f67D9A0666b9Dd0Ee6d397334903AE337e1E",
