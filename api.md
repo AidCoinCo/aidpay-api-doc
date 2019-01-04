@@ -285,9 +285,19 @@ Status could be
 * DEPOSIT_RECEIVED
 * DEPOSIT_CONFIRMED
 * EXECUTED
+* NEEDS_REFUND
 * REFUNDED
 * CANCELED
 * EXPIRED
+
+PaymentStatus could be 
+* PENDING
+* UNDERPAY_RECEIVED
+* UNDERPAY_CONFIRMED
+* PAYMENT_RECEIVED 
+* PAYMENT_CONFIRMED 
+* OVERPAY_RECEIVED 
+* OVERPAY_CONFIRMED
 :::
 
 Request:
@@ -307,6 +317,7 @@ Response:
   "uuid": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
   "orderId": "O-12345",
   "status": "WAITING_FOR_DEPOSIT",
+  "paymentStatus": "PENDING",
   "email": "example@aidcoin.co",
   "depositAddress": "1HfL94JWjmmjroyAHTDhRQqUwZ7PR4JoUZ",
   "destination": "0x4Aa0f67D9A0666b9Dd0Ee6d397334903AE337e1E",
@@ -364,6 +375,7 @@ Response:
       "uuid": "ffffffff-gggg-hhhh-iiii-llllllllllll",
       "orderId": "O-67890",
       "status": "WAITING_FOR_DEPOSIT",
+      "paymentStatus": "PENDING",
       "email": "example@aidcoin.co",
       "depositAddress": "1HfL94JWjmmjroyAHTDhRQqUwZ7PR4JoUZ",
       "destination": "0x4Aa0f67D9A0666b9Dd0Ee6d397334903AE337e1E",
@@ -382,6 +394,7 @@ Response:
       "uuid": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
       "orderId": "O-12345",
       "status": "WAITING_FOR_DEPOSIT",
+      "paymentStatus": "PENDING",
       "email": "example@aidcoin.co",
       "depositAddress": "1HfL94JWjmmjroyAHTDhRQqUwZ7PR4JoUZ",
       "destination": "0x4Aa0f67D9A0666b9Dd0Ee6d397334903AE337e1E",
@@ -452,6 +465,7 @@ Response:
   "uuid": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
   "orderId": "O-12345",
   "status": "WAITING_FOR_DEPOSIT",
+  "paymentStatus": "PENDING",
   "email": "example@aidcoin.co",
   "depositAddress": "1HfL94JWjmmjroyAHTDhRQqUwZ7PR4JoUZ",
   "destination": "0x4Aa0f67D9A0666b9Dd0Ee6d397334903AE337e1E",
@@ -518,6 +532,7 @@ Response:
   "uuid": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
   "orderId": "O-12345",
   "status": "WAITING_FOR_DEPOSIT",
+  "paymentStatus": "PENDING",
   "email": "example@aidcoin.co",
   "depositAddress": "1HfL94JWjmmjroyAHTDhRQqUwZ7PR4JoUZ",
   "destination": "0x4Aa0f67D9A0666b9Dd0Ee6d397334903AE337e1E",
@@ -568,6 +583,7 @@ Response:
   "uuid": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
   "orderId": "O-12345",
   "status": "CANCELED",
+  "paymentStatus": "PENDING",
   "email": "example@aidcoin.co",
   "depositAddress": "1HfL94JWjmmjroyAHTDhRQqUwZ7PR4JoUZ",
   "destination": "0x4Aa0f67D9A0666b9Dd0Ee6d397334903AE337e1E",
@@ -606,6 +622,7 @@ curl -X POST \
         "uuid": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
         "orderId": "O-12345",
         "status": "EXECUTED",
+        "paymentStatus": "PAYMENT_RECEIVED",
         "email": "example@aidcoin.co",
         "depositAddress": "1HfL94JWjmmjroyAHTDhRQqUwZ7PR4JoUZ",
         "destination": "0x4Aa0f67D9A0666b9Dd0Ee6d397334903AE337e1E",
