@@ -1,6 +1,6 @@
 {
   "name": "aidpay-api-doc",
-  "version": "0.0.1",
+  "version": "1.3.0",
   "description": "Documentation for AIDPay APIs",
   "scripts": {
     "dev": "vuepress dev",
